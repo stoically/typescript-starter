@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types": "dist",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc",
     "lint": "eslint '{src,test}/**/*'",
     "test": "mocha",
     "test:watch": "npm run test -- --watch",
@@ -12,15 +12,9 @@
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "settings": {
-      "ext": "ts"
-    },
-    "env": {
-      "es6": true
-    },
     "extends": [
-      "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
       "prettier/@typescript-eslint"
     ]
   },
@@ -28,8 +22,6 @@
     "trailingComma": "es5"
   },
   "mocha": {
-    "bail": true,
-    "reporter": "progress",
     "extension": "ts",
     "project": "tsconfig.json",
     "require": [
